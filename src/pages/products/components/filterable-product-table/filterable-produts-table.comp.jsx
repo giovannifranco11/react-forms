@@ -4,11 +4,13 @@ import SearchBar from '../search-bar/search-bar.comp';
 
 import './filterable-product-table.style.css';
 
-const FilterableProductTable = () => {
+const FilterableProductTable = (props) => {
     return (
         <div className="filterable-product-table-container">
             <SearchBar/>
-            <ProductTable/> 
+            <ProductTable productsList={props.productsList}/> 
+
+            
             <b>By Giovanni Franco</b>
         </div>
     );
