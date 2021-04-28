@@ -1,14 +1,16 @@
 import  React from 'react';
-import ProductTable from '../product-table/product-table.comp';
-import SearchBar from '../search-bar/search-bar.comp';
+import ProductTable from '../verde/product-table.comp';
+import SearchBar from '../azul/search-bar.comp';
 
 import './filterable-product-table.style.css';
 
 const FilterableProductTable = (props) => {
     return (
+        
         <div className="filterable-product-table-container">
-            <SearchBar/>
-            <ProductTable productsList={props.productsList}/> 
+            <h3><b>PELÍCULAS</b></h3>
+            <SearchBar/>            
+            <ProductTable listaPeliculas={props.listaPeliculas}/> 
 
             
             <b>By Giovanni Franco</b>

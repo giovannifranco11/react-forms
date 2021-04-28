@@ -1,5 +1,5 @@
 .product-table-container{
-    width: 50%;
+    width: 95%;
     margin-left: 10px;
     margin-right: 10px;
     min-height: 370px;
@@ -11,13 +11,14 @@
 
 .products-form{
     background-color:darkseagreen;
-    width: 0 auto;
+    width: 40%;
     border: 1px solid green;
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 15px;
+    margin-left: 500px;
     
     
 }

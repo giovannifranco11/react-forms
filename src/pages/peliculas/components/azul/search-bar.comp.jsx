@@ -9,7 +9,7 @@ const SearchBar = () => {
                 <input type="text" placeholder="Search..."/>
            </div>
            <div>
-                <input type="checkbox"/>Only show products in stock
+                <input type="checkbox"/>Mostrar solo peliculas disponibles
            </div>
         </div>
     );

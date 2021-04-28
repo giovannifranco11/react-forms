@@ -1,39 +1,45 @@
 import  React, { useState } from 'react';
-import ProductCategoryRow from '../product-category-row/product-category-row.comp';
-import ProductRow from '../product-row/product-row.comp';
+import ProductCategoryRow from '../turquesa/product-category-row.comp';
+import ProductRow from '../rojo/product-row.comp';
 
 
 
 import './product-table.style.css';
+import MasInfo from '../morado/masinfo.comp';
 
 const ProductTable = (props) => {
 
     
-    const [category, setCategory] = useState('');
-    const [name, setName] = useState('');
-    const [price, setPrice] = useState(0);
-    const [stock, setStock] = useState(0);
+    const [genero, setGenero] = useState('');
+    const [nombre, setNombre] = useState('');
+    const [duracion, setDuracion] = useState('');
+    const [stock, setStock] = useState('');
 
     const addProduct = (event) =>{
         event.preventDefault();
-        console.log('category' +": " + category);
-        console.log('name' +": " +name);
-        console.log('price' +": " + price);
-        console.log('stock' +": " + stock);
+        console.log('Género' +": " + genero);
+        console.log('Nombre' +": " + nombre);
+        console.log('Duración' +": " + duracion);
+        console.log('Stock' +": " + stock);
     }
     
     return (
         <div className="product-table-container">
+            
             <div>
-            {props.productsList.map((category,index)=>{
+            <MasInfo/>
+            {props.listaPeliculas.map((category,index)=>{
+                
                   return (
                     <React.Fragment key={category.id}>
-                        <ProductCategoryRow categoryName={category.name}/>
+                        <ProductCategoryRow categoryName={category.nombre}/>
+                        
                         {category.products.map((product, indexProduct)=>{
                             return (
-                                <ProductRow
+                                <ProductRow 
                                     key={product.id} 
                                     product={product}
+                                    categoryMasInfo={category.nombre}
                                 />
                             );
                         })}
@@ -41,65 +47,72 @@ const ProductTable = (props) => {
                   );
             })}
             </div>
+
             <div className="products-form">
             <form>
                 <table>
                     <tbody>
                     <tr>
                         <td>
-                        Category
+                       <b>Género</b> 
                         </td>
                     </tr>
                     <tr>
                         <td>
                         <select 
-                            value={category}
+                            value={genero}
                             onChange={(event)=>{
-                                setCategory(event.target.value);
+                                setGenero(event.target.value);
                             }}
                         >
-                            <option value="c1">Sporting Goods</option>
-                            <option value="c2">Electronics</option>
+                            <option value="Vacio"></option>
+                            <option value="Animadas">Animadas</option>
+                            <option value="Terror">Terror</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Accion">Acción</option>
                         </select>
                         </td>
                     </tr>
                     <tr>
-                        <td>Name</td>
+                        <td>Nombre de Pelicula</td>
                     </tr>
                     <tr>
                         <td>
                             <input
                                 type="text"
-                                value={name}
+                                placeholder="Ingrese nombre de pelicula"
+                                value={nombre}
                                 onChange={(event)=>{                                   
-                                    setName(event.target.value);
+                                    setNombre(event.target.value);
                                 }}
                             />
                         </td>
                                     
                     </tr>
                     <tr>
-                        <td>Price</td>
+                        <td>Duración en minutos</td>
                     </tr>
                     <tr>
                         <td>
                             <input
-                                type="number"
-                                value={price}
+                                type="text"
+                                placeholder="Ingrese duración en min"
+                                value={duracion}
                                 onChange={(event)=>{                                   
-                                    setPrice(event.target.value);
+                                    setDuracion(event.target.value);
                                 }}
                             />
                         
                         </td>
                     </tr>
                     <tr>
-                        <td>Stock</td>
+                        <td>Disponible /No Disponible</td>
                     </tr>
                     <tr>
                         <td>
                             <input
-                                type="number"
+                                type="text"
+                                placeholder="Esta disponible?"
                                 value={stock}
                                 onChange={(event)=>{                                   
                                     setStock(event.target.value);
@@ -113,7 +126,7 @@ const ProductTable = (props) => {
                             <button 
                                 onClick={addProduct}
                             >
-                                Add product
+                                Agregar pelicula
                             </button>
                         </td>
                     </tr>

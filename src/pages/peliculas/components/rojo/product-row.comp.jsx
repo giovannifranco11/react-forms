@@ -9,11 +9,11 @@ const ProductRow = (props) => {
             {
                 props.product.stock === 0
                 ?//if true
-                <span className="product-without-stock">{props.product.name}</span>
+                <span className="product-without-stock">{props.product.nombre}</span>
                 ://else
-                <span>{props.product.name}</span>
+                <span>{props.product.nombre}</span>
             }            
-           {' '} {props.product.price}
+           {'------>'}  {props.product.duracion} {"minutos"}
         </div>
     );
     
