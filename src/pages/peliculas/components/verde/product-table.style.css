@@ -18,7 +18,16 @@
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 15px;
-    margin-left: 500px;
+    margin-left: 500px;   
     
-    
+}
+
+.genero{
+    color: brown;
+    border: 2px solid turquoise;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 5px;
+    width: 45%;
+    margin-bottom: 15px;
 }

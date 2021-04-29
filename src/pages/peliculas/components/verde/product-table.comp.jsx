@@ -26,8 +26,9 @@ const ProductTable = (props) => {
     return (
         <div className="product-table-container">
             
-            <div>
+            <div className="float">
             <MasInfo/>
+            <div className="genero">GÉNERO</div>
             {props.listaPeliculas.map((category,index)=>{
                 
                   return (
@@ -50,6 +51,7 @@ const ProductTable = (props) => {
 
             <div className="products-form">
             <form>
+            <b>AGREGAR NUEVA PELÍCULA</b>
                 <table>
                     <tbody>
                     <tr>
